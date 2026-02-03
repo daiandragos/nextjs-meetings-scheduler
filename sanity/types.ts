@@ -383,7 +383,7 @@ export type MEETING_TYPES_BY_HOST_SLUG_QUERYResult = Array<{
   isDefault: boolean | null;
 }>;
 // Variable: HOST_ID_BY_CLERK_ID_QUERY
-// Query: *[        _type == "user" && clerkId == $cleerkId    ][0]._id
+// Query: *[        _type == "user" && clerkId == $clerkId    ][0]._id
 export type HOST_ID_BY_CLERK_ID_QUERYResult = string | null;
 
 // Source: sanity/queries/users.ts
@@ -521,7 +521,7 @@ declare module "@sanity/client" {
     "*[\n        _type == \"meetingType\" && host->clerkId == $clerkId\n    ] | order(isDefault desc, name asc) {\n        _id,\n        name,\n        \"slug\": slug.current,\n        duration,\n        description,\n        isDefault \n    }": MEETING_TYPES_BY_HOST_QUERYResult;
     "*[\n        _type == \"meetingType\" && host->slug.current == $hostSlug && slug.current == $meetingTypeSlug\n    ][0] {\n        _id,\n        name,\n        \"slug\": slug.current,\n        duration,\n        description,\n        host->{\n            _id,\n            name,\n            email,\n            \"slug\": slug.current,\n            availability[] {\n                _key,\n                startDateTime,\n                endDateTime\n            },\n            connectedAccounts[] {\n                _key,\n                accountId,\n                email,\n                isDefault,\n                accessToken,\n                refreshToken,\n                expiryDate\n            }\n        }\n    }": MEETING_TYPE_BY_SLUGS_QUERYResult;
     "*[\n        _type == \"meetingType\" && host->slug.current == $hostSlug\n    ] | order(isDefault desc, name asc) {\n        _id,\n        name,\n        \"slug\": slug.current,\n        duration,\n        description,\n        isDefault \n    }": MEETING_TYPES_BY_HOST_SLUG_QUERYResult;
-    "*[\n        _type == \"user\" && clerkId == $cleerkId\n    ][0]._id": HOST_ID_BY_CLERK_ID_QUERYResult;
+    "*[\n        _type == \"user\" && clerkId == $clerkId\n    ][0]._id": HOST_ID_BY_CLERK_ID_QUERYResult;
     "*[\n        _type == \"user\" && clerkId == $clerkId\n    ][0]{\n        _id,\n        _type,\n        clerkId,\n        name,\n        email,\n        slug,\n        availability[]{\n            _key,\n            startDateTime,\n            endDateTime\n        },\n        connectedAccounts[]{\n            _key,\n            accountId,\n            email,\n            provider,\n            isDefault,\n            connectedAt\n        }\n    }": USER_BY_CLERK_ID_QUERYResult;
     "*[\n        _type == \"user\" && slug.current == $slug\n    ][0]{\n        _id,\n        _type,\n        name,\n        email,\n        slug,\n        availability[]{\n            _key,\n            startDateTime,\n            endDateTime\n        }\n    }": USER_BY_SLUG_QUERYResult;
     "*[\n        _type == \"user\" && clerkId == $clerkId    \n    ][0]{\n        _id,\n        connectedAccounts[]{\n            _key,\n            accountId,\n            email,\n            accessToken,\n            refreshToken,\n            expiryDate,\n            isDefault,\n        }\n    }": USER_WITH_TOKENS_QUERYResult;

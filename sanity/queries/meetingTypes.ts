@@ -70,5 +70,5 @@ export const MEETING_TYPES_BY_HOST_SLUG_QUERY = defineQuery(`*[
  * Get the host id by their clerk Id
  */
 export const HOST_ID_BY_CLERK_ID_QUERY = defineQuery(`*[
-        _type == "user" && clerkId == $cleerkId
+        _type == "user" && clerkId == $clerkId
     ][0]._id`);
