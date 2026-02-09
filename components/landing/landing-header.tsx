@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   SignInButton,
@@ -8,10 +10,15 @@ import {
 } from "@clerk/nextjs";
 import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 
 export function LandingHeader() {
+  const pathname = usePathname();
+  const isPricingPage = pathname === "/pricing";
   return (
-    <header className="fixed top-0 z-50 w-full border-b bg-white/80 backdrop-blur-sm dark:bg-zinc-950/80">
+    <header
+      className={`fixed top-0 w-full border-b bg-white/80 backdrop-blur-sm dark:bg-zinc-950/80 ${!isPricingPage && "z-50"}`}
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-2">

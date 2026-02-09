@@ -43,7 +43,7 @@ export async function getGoogleBusyTimes(
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized!");
 
-  const user = await client.fetch(USER_WITH_TOKENS_QUERY, { ckerkId: userId });
+  const user = await client.fetch(USER_WITH_TOKENS_QUERY, { clerkId: userId });
   if (!user?.connectedAccounts?.length) {
     return [];
   }
