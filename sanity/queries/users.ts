@@ -171,3 +171,41 @@ export const USER_SLUG_QUERY = defineQuery(`*[
         name,
         slug
     }`);
+
+/**
+ * Count the user's bookings
+ */
+export const COUNT_USER_BOOKINGS_QUERY = defineQuery(`count(*[
+        _type == "booking",
+        && host->clerkId == $clerkId
+        && startTime >= $monthStart
+        && startTime < $monthEnd
+    ])`);
+
+/**
+ * Check if there are connected accounts
+ */
+export const HAS_CONNECTED_ACCOUNT_QUERY = defineQuery(`count(*[
+        _type == "user"
+        && clerkId == $clerkId
+        && defined(connectedAccounts)
+        && length(connectedAccounts) > 0
+    ]) > 0`);
+/**
+ * Get host's clerkId by their slug
+ */
+export const HOST_CLERK_ID_BY_SLUG_QUERY = `*[
+  _type == "user"
+  && slug.current == $hostSlug
+][0].clerkId`;
+
+/**
+ * Count bookings for a host in a certain date range
+ */
+
+export const COUNT_HOST_BOOKINGS_QUERY = `count(*[
+  _type = "booking"
+  && host->slug.current == $hostSlug
+  && startTime >= $monthStart
+  && startTime < $monthEnd
+])`;
