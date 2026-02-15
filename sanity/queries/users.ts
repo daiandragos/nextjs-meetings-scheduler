@@ -176,7 +176,7 @@ export const USER_SLUG_QUERY = defineQuery(`*[
  * Count the user's bookings
  */
 export const COUNT_USER_BOOKINGS_QUERY = defineQuery(`count(*[
-        _type == "booking",
+        _type == "booking"
         && host->clerkId == $clerkId
         && startTime >= $monthStart
         && startTime < $monthEnd
@@ -204,7 +204,7 @@ export const HOST_CLERK_ID_BY_SLUG_QUERY = `*[
  */
 
 export const COUNT_HOST_BOOKINGS_QUERY = `count(*[
-  _type = "booking"
+  _type == "booking"
   && host->slug.current == $hostSlug
   && startTime >= $monthStart
   && startTime < $monthEnd

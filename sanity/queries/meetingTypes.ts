@@ -23,35 +23,36 @@ export const MEETING_TYPES_BY_HOST_QUERY = defineQuery(`*[
  * Get a meeting type by host slug and meeting type slug
  */
 export const MEETING_TYPE_BY_SLUGS_QUERY = defineQuery(`*[
-        _type == "meetingType" && host->slug.current == $hostSlug && slug.current == $meetingTypeSlug
-    ][0] {
-        _id,
-        name,
-        "slug": slug.current,
-        duration,
-        description,
-        host->{
-            _id,
-            name,
-            email,
-            "slug": slug.current,
-            availability[] {
-                _key,
-                startDateTime,
-                endDateTime
-            },
-            connectedAccounts[] {
-                _key,
-                accountId,
-                email,
-                isDefault,
-                accessToken,
-                refreshToken,
-                expiryDate
-            }
-        }
-    }`);
-
+  _type == "meetingType"
+  && host->slug.current == $hostSlug
+  && slug.current == $meetingTypeSlug
+][0] {
+  _id,
+  name,
+  "slug": slug.current,
+  duration,
+  description,
+  host-> {
+    _id,
+    name,
+    email,
+    "slug": slug.current,
+    availability[] {
+      _key,
+      startDateTime,
+      endDateTime
+    },
+    connectedAccounts[] {
+      _key,
+      accountId,
+      email,
+      isDefault,
+      accessToken,
+      refreshToken,
+      expiryDate
+    }
+  }
+}`);
 /**
  * Get all meeting types for a host
  */

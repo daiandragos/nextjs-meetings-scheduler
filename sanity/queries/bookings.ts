@@ -132,11 +132,12 @@ export const BOOKINGS_BY_HOST_SLUG_IN_RANGE_QUERY = defineQuery(`*[
  * Get all bookings for a host, by slug
  */
 export const ALL_BOOKINGS_BY_HOST_SLUG_QUERY = defineQuery(`*[
-        _type == "booking" && host->slug.current == $hostSlug
-    ] | order(startTime asc) {
-        _id,
-        startTime,
-        endTime,
-        googleEventId,
-        guestEmail 
-    }`);
+  _type == "booking"
+  && host->slug.current == $hostSlug
+] | order(startTime asc) {
+  _id,
+  startTime,
+  endTime,
+  googleEventId,
+  guestEmail
+}`);

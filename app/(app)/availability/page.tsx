@@ -6,7 +6,7 @@ import { auth } from "@clerk/nextjs/server";
 import { startOfWeek, addWeeks } from "date-fns";
 import { processBookingsWithStatuses } from "@/lib/booking-utils";
 import { AvailabilityCalendar } from "@/components/calendar";
-// import { ShareLinkDialog } from "@/components/calendar/components/share-link-dialog";
+import { ShareLinkDialog } from "@/components/calendar/components/share-link-dialog";
 import { RefreshButton } from "@/components/ui/refresh-button";
 import type {
   TimeBlock,
@@ -106,7 +106,7 @@ async function AvailabilityPage() {
         </div>
         <div className="flex gap-2">
           <RefreshButton />
-          {/* <ShareLinkDialog /> */}
+          <ShareLinkDialog />
         </div>
       </div>
       <AvailabilityCalendar

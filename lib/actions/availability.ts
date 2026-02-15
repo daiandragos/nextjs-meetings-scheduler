@@ -138,7 +138,7 @@ export async function getMeetingTypes(): Promise<MeetingTypeForHost[]> {
   return meetingTypes;
 }
 
-type MeetingDuration = 15 | 30 | 45 | 60 | 90;
+export type MeetingDuration = 15 | 30 | 45 | 60 | 90;
 
 export async function createMeetingType(data: {
   name: string;
