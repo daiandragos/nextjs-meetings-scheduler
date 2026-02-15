@@ -3,6 +3,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SanityLive } from "@/sanity/lib/live";
+import { TimezoneDetector } from "@/components/timezone-detector";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         >
           <main>{children}</main>
           <SanityLive />
+          <TimezoneDetector />
         </body>
       </html>
     </ClerkProvider>
