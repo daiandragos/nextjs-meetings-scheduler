@@ -51,7 +51,7 @@ export function FeedbackForm() {
   return (
     <Card className="w-full max-w-md shadow-lg border-0">
       <CardHeader className="text-center pb-2">
-        <div className="mx-auto mb-4 flex size-14 items-center justiify-center rounded-full bg-blue-100">
+        <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-full bg-blue-100">
           <MessageSquare className="size-7 text-blue-600" />
         </div>
         <CardTitle className="text-2xl font-semibold">

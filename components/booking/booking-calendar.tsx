@@ -77,7 +77,7 @@ export function BookingCalendar({
   const availableSlots = date ? getSlotsForDate(date) : [];
 
   const handleDateSelect = (newDate: Date | undefined) => {
-    setDate(new Date());
+    setDate(newDate);
     setSelectedSlot(null);
   };
 
@@ -233,7 +233,7 @@ export function BookingCalendar({
               </Label>
               <Textarea
                 id="notes"
-                value="notes"
+                value={notes}
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                   setNotes(e.target.value)
                 }
@@ -283,7 +283,7 @@ export function BookingCalendar({
             className="bg-transparent p-0"
             formatters={{
               formatWeekdayName: (d) =>
-                d.toLocaleString("en_US", { weekday: "short" }),
+                d.toLocaleString("en-US", { weekday: "short" }),
             }}
             modifiers={{
               available: (day) => hasAvailability(day) && !isBefore(day, today),

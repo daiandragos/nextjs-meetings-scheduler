@@ -20,7 +20,7 @@ export function HostHeader({
 
   return (
     <div className="mb-8 text-center">
-      <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-blue-500 to-purple-600 text-2xl font-bold text-white ,b-4">
+      <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-blue-500 to-purple-600 text-2xl font-bold text-white mb-4">
         {initial}
       </div>
 

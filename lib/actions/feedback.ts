@@ -7,6 +7,14 @@ import { getOrCreateUser } from "./availability";
 export async function submitFeedback(
   content: string,
 ): Promise<{ success: boolean }> {
+  const trimmed = content?.trim();
+  if (!trimmed || trimmed.length === 0) {
+    throw new Error("Feedback content is required");
+  }
+  if (trimmed.length > 5000) {
+    throw new Error("Feedback content is too long");
+  }
+
   const { userId } = await auth();
   if (!userId) {
     throw new Error("Not authenticated");

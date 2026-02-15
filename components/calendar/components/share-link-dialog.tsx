@@ -168,7 +168,7 @@ export function ShareLinkDialog() {
           Share Link
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm: max-w-md">
+      <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Share Your Booking Link</DialogTitle>
           <DialogDescription>
@@ -282,7 +282,7 @@ export function ShareLinkDialog() {
                     ) : (
                       <Plus className="mr-2 h-4 w-4" />
                     )}
-                    Create Metting Type
+                    Create Meeting Type
                   </Button>
                   {meetingTypes.length > 0 && (
                     <Button

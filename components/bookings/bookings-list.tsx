@@ -101,7 +101,7 @@ export function BookingsList({ bookings }: BookingsListProps) {
             const isTodayBooking = isToday(startTime);
 
             return (
-              <Card key={booking._id} className="oveerflow-hidden">
+              <Card key={booking._id} className="overflow-hidden">
                 <CardContent className="p-0">
                   <div className="flex flex-col md:flex-row">
                     <div
