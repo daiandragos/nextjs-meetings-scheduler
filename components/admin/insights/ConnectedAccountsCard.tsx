@@ -57,7 +57,7 @@ export function ConnectedAccountsCard() {
 
   return (
     <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-sm border-zinc-200/60 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 h-full">
-      <div className="absolute top-0 roght-0 w-32 h-32 bg-linear-to-br from-amber-500/10 to-orange-500/5 rounded-bl-full" />
+      <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-amber-500/10 to-orange-500/5 rounded-bl-full" />
 
       <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
         <CardTitle className="text-sm font-medium text-zinc-500">

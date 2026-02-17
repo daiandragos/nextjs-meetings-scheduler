@@ -18,9 +18,9 @@ A **modern meeting scheduling platform** designed to simplify calendar coordinat
 | Tool                   | Description                                                                           |
 | ---------------------- | ------------------------------------------------------------------------------------- |
 | **Next.js**            | Full-stack React framework for frontend, backend routes, and performance optimization |
-| **Shadcn**             | Out of the box UI components                                                          |
+| **Shadcn**             | Out-of-the box UI components                                                          |
 | **Tailwind CSS**       | Utility-first styling                                                                 |
 | **Sanity**             | Headless CMS for structured content, feedback storage, and admin workflows            |
 | **Clerk**              | Authentication, user management, and billing infrastructure                           |
 | **Google APIs**        | Calendar syncing, meeting link generation, and multi-account integration              |
-| **React Big Calendar** | Calendar vizualisation library                                                        |
+| **React Big Calendar** | Calendar visualisation library                                                        |

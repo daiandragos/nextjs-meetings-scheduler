@@ -27,7 +27,7 @@ function getInitials(name: string | null): string {
   }
   const parts = name.split(" ");
   if (parts.length >= 2) {
-    return `${parts[0][0]} ${parts[1][0]}`.toUpperCase();
+    return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
   }
   return name.slice(0, 2).toUpperCase();
 }
@@ -85,7 +85,7 @@ export function FeedbackItem({
           {displayData.content}
         </p>
         <p className="text-xs text-zinc-400 mt-1.5 truncate">
-          {displayData.userName ?? "Unknonw"}
+          {displayData.userName ?? "Unknown"}
           {displayData.userEmail && (
             <span className="text-zinc-300"> - {displayData.userEmail}</span>
           )}

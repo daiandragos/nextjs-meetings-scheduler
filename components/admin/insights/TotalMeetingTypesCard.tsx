@@ -7,7 +7,7 @@ export function TotalMeetingTypesCard() {
   return (
     <DocumentCountCard
       documentType="meetingType"
-      title="MeetingTypes"
+      title="Meeting Types"
       icon={VideoIcon}
     />
   );

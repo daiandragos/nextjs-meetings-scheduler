@@ -119,7 +119,7 @@ export function MostBookedDayCard() {
                         ? "bg-amber-200"
                         : "bg-zinc-100"
                   }`}
-                  style={{ height: `${height} %` }}
+                  style={{ height: `${height}%` }}
                 />
               </div>
             );

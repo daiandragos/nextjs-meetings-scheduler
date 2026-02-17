@@ -27,7 +27,7 @@ export function FeedbackList({ showArchived }: FeedbackListProps) {
   }
 
   return (
-    <div className="flex flex-col gap-2 max-w-[50vh] lg:max-h-100 overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-amber-200 scrollbar-track-transparent">
+    <div className="flex flex-col gap-2 max-w-[50vw] lg:max-h-100 overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-amber-200 scrollbar-track-transparent">
       {feedbackDocs.map((doc, ndx) => (
         <Suspense
           key={doc.documentId}

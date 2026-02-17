@@ -13,7 +13,7 @@ import { Spinner } from "@/components/ui/spinner";
 function CardSkeleton({ className = "" }: { className?: string }) {
   return (
     <Card
-      className={`min-h-35 bg-white/60 backdrop-blur-sm border-zinc-200/50${className}`}
+      className={`min-h-35 bg-white/60 backdrop-blur-sm border-zinc-200/50 ${className}`}
     >
       <CardContent className="flex items-center justify-center h-full pt-6">
         <Spinner className="size-5 text-amber-500" />
